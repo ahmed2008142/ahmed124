@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مراجعة الفصل الأول: الدعامة والحركة - أحياء ثالثة ثانوي</title>
+    <title>مراجعة وكويز: الدعامة والحركة - أحياء ثالثة ثانوي</title>
     <!-- تضمين Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -21,9 +21,28 @@
             padding-left: 1.5rem;
         }
         .accordion-item.active .accordion-content {
-            max-height: 1000px; /* قيمة أكبر لاستيعاب المحتوى الموسع */
+            max-height: 1200px; /* قيمة أكبر لاستيعاب المحتوى الموسع */
             padding-top: 1rem;
             padding-bottom: 1.5rem;
+        }
+        /* تنسيقات الأزرار لخيارات الكويز */
+        .option-btn {
+            @apply flex-grow p-3 mb-2 text-right bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-blue-50 transition duration-150 ease-in-out;
+        }
+        /* التحديد عند الضغط (الميزة المطلوبة) */
+        .option-btn.selected {
+             /* إطار وحلقة أكثر وضوحاً عند التحديد */
+             @apply border-purple-600 ring-4 ring-purple-400 shadow-lg;
+        }
+        .option-btn.correct {
+            @apply bg-green-100 border-green-500 font-bold;
+        }
+        .option-btn.incorrect {
+            @apply bg-red-100 border-red-500 font-bold;
+        }
+        /* مسافة إضافية بين أقسام المراجعة والكويز */
+        #review-container {
+            margin-bottom: 3rem;
         }
     </style>
 </head>
@@ -37,7 +56,8 @@
         </header>
 
         <!-- حاوية المراجعة (Accordion) -->
-        <div id="review-container" class="space-y-4">
+        <h2 id="review-title" class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">أقسام المراجعة التفصيلية</h2>
+        <div id="review-container" class="space-y-4 mb-12">
 
             <!-- 1. الدعامة في النبات -->
             <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-green-500">
@@ -48,7 +68,7 @@
                 <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
                     <p class="mb-3 font-bold text-lg text-green-600">أولاً: الدعامة الفسيولوجية (المؤقتة):</p>
                     <ul class="list-disc pr-5 space-y-2 mb-4">
-                        <li><strong class="text-blue-700">الآلية:</strong> تعتمد على خاصية الأسموزية؛ حيث يدخل الماء إلى الفجوة العصارية للخلية، فيزداد حجمها ويضغط البروتوبلازم على الجدار الخلوي المرن.</li>
+                        <li><strong class="text-blue-700">الآلية:</strong> تعتمد على خاصية الأسموزية؛ حيث يدخل الماء إلى الفجوة العصارية للخلية، فيزداد حجمها ويضغط البروتوبلازم على الجدار الخلوي المرن. </li>
                         <li><strong class="text-blue-700">النتيجة:</strong> يكتسب الجدار حالة من التوتر والانتفاخ مما يكسب الخلية (وكذلك النسيج) صلابة.</li>
                         <li><strong class="text-blue-700">أمثلة:</strong> استقامة سوق وأوراق النباتات العشبية عند الري، وانتفاخ بذور البقوليات الجافة عند وضعها في الماء. تزول بزوال الماء.</li>
                     </ul>
@@ -63,9 +83,6 @@
                             </ol>
                         </li>
                     </ul>
-                    <div class="mt-4 text-center">
-                        
-                    </div>
                 </div>
             </div>
 
@@ -76,7 +93,7 @@
                     <svg class="w-6 h-6 transform transition-transform duration-300 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
-                    <p class="mb-3 font-bold text-lg text-blue-600">يتكون الجهاز الهيكلي (206 عظمة) من الهيكل المحوري والطرفي، بالإضافة إلى الغضاريف والمفاصل والأربطة والأوتار.</p>
+                    <p class="mb-3 font-bold text-lg text-blue-600">يتكون الجهاز الهيكلي (206 عظمة) من الهيكل المحوري والطرفي، بالإضافة إلى الغضاريف والمفاصل والأربطة والأوتار. [Image of الهيكل العظمي البشري]</p>
                     <ul class="list-disc pr-5 space-y-2">
                         <li><strong class="text-red-700">الهيكل المحوري (80 عظمة):</strong> يشمل العمود الفقري (33 فقرة)، والجمجمة، والقفص الصدري (12 زوج ضلوع وعظمة القص). وظيفته الرئيسية هي الحماية والدعم.</li>
                         <li><strong class="text-red-700">الهيكل الطرفي (126 عظمة):</strong> يشمل حزامي الكتف والحوض والأطراف الأربعة. وظيفته الأساسية هي تسهيل الحركة.</li>
@@ -90,9 +107,6 @@
                         <li><strong class="text-red-700">الأربطة:</strong> حزم ليفية قوية تربط العظام ببعضها عند المفاصل وتحدد حركة المفصل.</li>
                         <li><strong class="text-red-700">الأوتار:</strong> نسيج ضام يربط العضلات بالعظام (مثل وتر أخيل الذي يربط العضلة التوأمية بعظمة الكعب).</li>
                     </ul>
-                    <div class="mt-4 text-center">
-                        [Image of الهيكل العظمي البشري]
-                    </div>
                 </div>
             </div>
 
@@ -105,7 +119,7 @@
                 <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
                     <p class="mb-3 font-bold text-lg text-yellow-600">تظهر الحركة في النبات بعدة أشكال، بعضها يعتمد على النمو وبعضها على الدعامة الفسيولوجية:</p>
                     <ul class="list-disc pr-5 space-y-2">
-                        <li><strong class="text-purple-700">الحركة الدائمة (الدورانية السيتوبلازمية):</strong> حركة مستمرة للسيتوبلازم (حركة دورانية) داخل خلايا النبات الحية، وتشاهد تحت المجهر في خلايا ورقة نبات الإيلوديا.</li>
+                        <li><strong class="text-purple-700">الحركة الدائمة (الدورانية السيتوبلازمية):</strong> حركة مستمرة للسيتوبلازم (حركة دورانية) داخل خلايا النبات الحية، وتشاهد تحت المجهر في خلايا ورقة نبات الإيلوديا. </li>
                         <li><strong class="text-purple-700">حركة اللمس والنوم واليقظة:</strong>
                             <p class="mr-4 mt-1">تحدث في نبات المستحية وغيرها من البقوليات نتيجة تغير ضغط الامتلاء (الدعامة الفسيولوجية) في خلايا الانتفاخات الموجودة عند قواعد الوريقات والأعناق.</p>
                         </li>
@@ -136,11 +150,8 @@
                                 <li>قصر المنطقة المضيئة (I)، بينما يظل طول المنطقة الداكنة (A) ثابتاً.</li>
                             </ul>
                         </li>
-                        <li><strong class="text-indigo-700">عملية الانبساط:</strong> يتطلب الانفصال عن الأكتين طاقة (ATP). ترتبط جزيئات ATP بالروابط المستعرضة مما يفك ارتباطها بالأكتين، فترتخي العضلة وتعود الخيوط إلى موضعها الأصلي.</li>
+                        <li><strong class="text-indigo-700">عملية الانبساط:</strong> يتطلب الانفصال عن الأكتين طاقة (ATP). ترتبط جزيئات ATP بالروابط المستعرضة مما يفك ارتباطها بالأكتين، فترتخي العضلة وتعود الخيوط إلى موضعها الأصلي. [Image of نظرية الخيوط المنزلقة]</li>
                     </ul>
-                    <div class="mt-4 text-center">
-                        
-                    </div>
                 </div>
             </div>
 
@@ -152,7 +163,7 @@
                 </button>
                 <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
                     <ul class="list-disc pr-5 space-y-3">
-                        <li><strong class="text-orange-700">الوصلة العصبية العضلية:</strong> هي منطقة التشابك بين التفرع النهائي للخلية العصبية والليف العضلي. بعد انتهاء الانقباض، يعمل إنزيم الكولين إستريز على تحطيم الأستيل كولين لعودة غشاء الليف العضلي إلى حالة الراحة. </li>
+                        <li><strong class="text-orange-700">الوصلة العصبية العضلية:</strong> هي منطقة التشابك بين التفرع النهائي للخلية العصبية والليف العضلي. بعد انتهاء الانقباض، يعمل إنزيم الكولين إستريز على تحطيم الأستيل كولين لعودة غشاء الليف العضلي إلى حالة الراحة.</li>
                         <li><strong class="text-orange-700">الإجهاد والتعب العضلي:</strong>
                             <p class="mr-4 mt-1">ينتج عن نقص إمداد الأكسجين للعضلات أثناء المجهود الشاق، مما يضطرها للتنفس اللاهوائي. ينتج عن ذلك تراكم <strong class="text-red-600">حمض اللاكتيك</strong> (يسبب الإجهاد) وتوليد كمية قليلة من <strong class="text-red-600">ATP</strong>.</p>
                         </li>
@@ -165,18 +176,256 @@
                     </ul>
                 </div>
             </div>
-
         </div>
         <!-- نهاية حاوية المراجعة -->
 
+        <!-- قسم الكويز (الاختبار الذاتي) -->
+        <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-purple-600 quiz-box">
+            <h2 class="text-2xl font-extrabold text-purple-700 mb-6 text-center">اختبار ذاتي: الدعامة والحركة (10 أسئلة)</h2>
+            
+            <!-- مكان عرض الأسئلة -->
+            <div id="quiz-container">
+                <div id="question-display" class="bg-purple-50 p-4 rounded-lg shadow-inner mb-6">
+                    <p class="text-lg font-bold text-gray-800" id="current-question-text">اضغط "ابدأ الاختبار" للبدء!</p>
+                </div>
+                
+                <div id="options-container" class="space-y-4">
+                    <!-- خيارات الإجابة ستُعرض هنا مع ترقيم -->
+                </div>
+
+                <!-- زر الإجابة والتقدم -->
+                <button id="next-button" onclick="handleAnswer()" class="w-full mt-6 py-3 bg-purple-600 text-white font-bold text-xl rounded-lg hover:bg-purple-700 transition duration-300 shadow-md disabled:opacity-50" disabled>
+                    إرسال الإجابة
+                </button>
+                
+                <!-- زر البدء/إعادة التشغيل -->
+                <button id="start-button" onclick="startQuiz()" class="w-full mt-4 py-3 bg-green-500 text-white font-bold text-lg rounded-lg hover:bg-green-600 transition duration-300 shadow-md">
+                    ابدأ الاختبار
+                </button>
+            </div>
+            
+            <!-- مكان عرض النتيجة -->
+            <div id="result-container" class="hidden text-center p-8 bg-blue-100 rounded-lg mt-6">
+                <h3 class="text-3xl font-extrabold text-blue-800 mb-4">نتيجتك النهائية</h3>
+                <p id="final-score" class="text-5xl font-black text-blue-700 mb-6">0/10</p>
+                <p id="score-message" class="text-xl text-gray-700 mb-6"></p>
+                <button onclick="startQuiz()" class="py-3 px-6 bg-purple-600 text-white font-bold text-lg rounded-lg hover:bg-purple-700 transition duration-300 shadow-lg">
+                    إعادة الاختبار
+                </button>
+            </div>
+
+        </div>
+        <!-- نهاية قسم الكويز -->
+
         <!-- تذييل -->
         <footer class="mt-12 text-center text-gray-600 text-sm p-4 border-t border-gray-300">
-            <p>مراجعة مركزة وشاملة لأهم النقاط في الفصل الأول.</p>
+            <p>تم التصميم للمراجعة والتركيز على النقاط الأساسية للفصل الأول.</p>
         </footer>
 
     </div>
 
     <script>
+        // مصفوفة الأسئلة
+        const quizQuestions = [
+            {
+                question: "أي مما يلي يعتمد بشكل أساسي على خاصية الأسموزية (دخول الماء)؟",
+                options: ["ترسيب الكيوتين على البشرة", "انتفاخ بذور البقوليات الجافة", "وجود اللجنين في الألياف", "ارتباط الأربطة ببعضها"],
+                answer: 1 
+            },
+            {
+                question: "عدد عظام الهيكل المحوري في الإنسان هو:",
+                options: ["206 عظمة", "126 عظمة", "80 عظمة", "33 عظمة"],
+                answer: 2 
+            },
+            {
+                question: "المادة التي تترسب على جدر خلايا البشرة الخارجية للنبات للحد من فقدان الماء هي:",
+                options: ["السيوبرين", "السليلوز", "الكيوتين", "اللجنين"],
+                answer: 2 
+            },
+            {
+                question: "المفصل الذي يسمح بحركة محدودة جداً ويفصل بين فقرات العمود الفقري هو مفصل:",
+                options: ["ليفي", "زلالي واسع", "غضروفي", "زلالي محدود"],
+                answer: 2 
+            },
+            {
+                question: "النسيج الضام الذي يربط العضلات بالعظام (مثل وتر أخيل) هو:",
+                options: ["الغضاريف", "الأربطة", "الأوتار", "النخاع العظمي"],
+                answer: 2 
+            },
+            {
+                question: "سبب استمرار انقباض العضلة (حالة الشد العضلي المؤلم) هو نقص جزيئات:",
+                options: ["أيونات الكالسيوم", "الأستيل كولين", "حمض اللاكتيك", "ATP"],
+                answer: 3 
+            },
+            {
+                question: "في نظرية الخيوط المنزلقة، ما هو التركيب الذي ينطلق من خيوط الميوسين ليتصل بخيوط الأكتين؟",
+                options: ["الألياف العضلية", "الروابط المستعرضة", "الخطوط Z", "الأقراص المضيئة"],
+                answer: 1 
+            },
+            {
+                question: "الحركة التي تعتمد على تغير ضغط الامتلاء في خلايا نبات المستحية هي حركة:",
+                options: ["الانتحاء الضوئي", "الشد بالمحاليق", "الدورانية السيتوبلازمية", "اللمس والنوم"],
+                answer: 3 
+            },
+            {
+                question: "أثناء الانقباض العضلي، ماذا يحدث للمنطقة شبه المضيئة (H)؟",
+                options: ["يزداد طولها", "يظل طولها ثابتاً", "تختفي أو تقصر", "تتحول إلى منطقة داكنة"],
+                answer: 2 
+            },
+            {
+                question: "عند نقص الأكسجين في العضلة، تتراكم مادة عضوية تسبب الإجهاد هي:",
+                options: ["حمض البيروفيك", "حمض اللاكتيك", "الجلوكوز", "الإنزيم الكولين إستريز"],
+                answer: 1 
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOption = null;
+
+        const reviewContainer = document.getElementById('review-container');
+        const reviewTitle = document.getElementById('review-title');
+        const quizContainer = document.getElementById('quiz-container');
+        const resultContainer = document.getElementById('result-container');
+        const questionText = document.getElementById('current-question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const nextButton = document.getElementById('next-button');
+        const startButton = document.getElementById('start-button');
+        const finalScore = document.getElementById('final-score');
+        const scoreMessage = document.getElementById('score-message');
+
+
+        // دالة عرض الأسئلة
+        function displayQuestion() {
+            if (currentQuestionIndex < quizQuestions.length) {
+                const q = quizQuestions[currentQuestionIndex];
+                questionText.textContent = `السؤال ${currentQuestionIndex + 1} من ${quizQuestions.length}: ${q.question}`;
+                optionsContainer.innerHTML = '';
+                selectedOption = null;
+                nextButton.disabled = true;
+                nextButton.textContent = 'إرسال الإجابة';
+
+                q.options.forEach((option, index) => {
+                    const optionDiv = document.createElement('div');
+                    // space-x-reverse لدعم تخطيط RTL
+                    optionDiv.className = 'flex items-center space-x-3 space-x-reverse'; 
+
+                    const numberSpan = document.createElement('span');
+                    numberSpan.textContent = `${index + 1}.`;
+                    // وسم الـ w-8 لضمان مساحة ثابتة للرقم
+                    numberSpan.className = 'text-xl font-bold text-purple-700 w-8 flex-shrink-0';
+
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.className = 'option-btn';
+                    button.setAttribute('data-index', index);
+                    button.onclick = () => selectOption(button, index);
+
+                    optionDiv.appendChild(numberSpan);
+                    optionDiv.appendChild(button);
+                    optionsContainer.appendChild(optionDiv);
+                });
+            } else {
+                showResults();
+            }
+        }
+
+        // دالة اختيار الإجابة
+        function selectOption(button, index) {
+            // إزالة التحديد من جميع الخيارات
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+
+            // تحديد الخيار الحالي وإضافة علامة (selected class)
+            button.classList.add('selected');
+            selectedOption = index;
+            nextButton.disabled = false;
+        }
+
+        // دالة التعامل مع الإجابة والتحقق منها
+        function handleAnswer() {
+            if (selectedOption === null) return;
+
+            const q = quizQuestions[currentQuestionIndex];
+            const correctIndex = q.answer;
+            const isCorrect = selectedOption === correctIndex;
+
+            // تحديد الأزرار وتلوينها
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                const btnIndex = parseInt(btn.getAttribute('data-index'));
+                btn.disabled = true; // إيقاف التفاعل بعد الإجابة
+                btn.classList.remove('selected'); // إزالة إطار التحديد
+
+                if (btnIndex === correctIndex) {
+                    btn.classList.add('correct');
+                } else if (btnIndex === selectedOption) {
+                    btn.classList.add('incorrect');
+                }
+            });
+            
+            // تحديث النتيجة
+            if (isCorrect) {
+                score++;
+            }
+
+            nextButton.textContent = 'السؤال التالي >>';
+            nextButton.disabled = false;
+            nextButton.onclick = goToNextQuestion;
+        }
+
+        // دالة الانتقال للسؤال التالي
+        function goToNextQuestion() {
+            currentQuestionIndex++;
+            nextButton.onclick = handleAnswer; // إعادة تعيين الدالة لـ handleAnswer
+            document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = false); // تفعيل الأزرار للسؤال الجديد
+            displayQuestion();
+        }
+
+        // دالة عرض النتائج
+        function showResults() {
+            quizContainer.classList.add('hidden');
+            resultContainer.classList.remove('hidden');
+            
+            finalScore.textContent = `${score}/${quizQuestions.length}`;
+            
+            let message = '';
+            const percentage = (score / quizQuestions.length) * 100;
+
+            if (percentage >= 90) {
+                message = "ممتاز! إتقان عالٍ للمادة، استمر على هذا المستوى.";
+            } else if (percentage >= 70) {
+                message = "جيد جداً! لديك فهم قوي، راجع النقاط القليلة التي أخطأت فيها.";
+            } else if (percentage >= 50) {
+                message = "جيد! أنت على الطريق الصحيح، تحتاج إلى مراجعة شاملة لبعض الأقسام.";
+            } else {
+                message = "تحتاج إلى تركيز أكبر. قم بمراجعة الأقسام التفصيلية في الأعلى ثم أعد الاختبار.";
+            }
+            scoreMessage.textContent = message;
+
+            // عند الانتهاء من الكويز، أظهر قسم المراجعة مرة أخرى
+            reviewContainer.classList.remove('hidden');
+            reviewTitle.classList.remove('hidden');
+        }
+
+        // دالة بدء الاختبار
+        function startQuiz() {
+            // إخفاء قسم المراجعة والشرح عند البدء
+            reviewContainer.classList.add('hidden');
+            reviewTitle.classList.add('hidden');
+
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedOption = null;
+            
+            quizContainer.classList.remove('hidden');
+            resultContainer.classList.add('hidden');
+            startButton.classList.add('hidden'); 
+            
+            displayQuestion();
+        }
+
+
         // دالة JavaScript لفتح وإغلاق أقسام المراجعة (Accordion)
         function toggleAccordion(button) {
             const item = button.parentElement;
