@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة الفصل الأول: الدعامة والحركة - أحياء ثالثة ثانوي</title>
+    <!-- تضمين Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* خط "Tajawal" لضمان قراءة جيدة باللغة العربية */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f0f4f8; /* خلفية فاتحة ومريحة للعين */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.5s ease;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; /* قيمة أكبر لاستيعاب المحتوى الموسع */
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- العنوان الرئيسي -->
+        <header class="text-center mb-8 p-6 bg-blue-600 shadow-xl rounded-xl text-white">
+            <h1 class="text-4xl font-extrabold">مراجعة شاملة: الدعامة والحركة</h1>
+            <p class="text-xl mt-2 font-light">أحياء الصف الثالث الثانوي - الفصل الأول</p>
+        </header>
+
+        <!-- حاوية المراجعة (Accordion) -->
+        <div id="review-container" class="space-y-4">
+
+            <!-- 1. الدعامة في النبات -->
+            <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-green-500">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-xl font-extrabold text-gray-800 hover:bg-green-50 transition duration-200 rounded-t-xl" onclick="toggleAccordion(this)">
+                    <span>1. الدعامة في النبات: الفسيولوجية والتركيبية</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
+                    <p class="mb-3 font-bold text-lg text-green-600">أولاً: الدعامة الفسيولوجية (المؤقتة):</p>
+                    <ul class="list-disc pr-5 space-y-2 mb-4">
+                        <li><strong class="text-blue-700">الآلية:</strong> تعتمد على خاصية الأسموزية؛ حيث يدخل الماء إلى الفجوة العصارية للخلية، فيزداد حجمها ويضغط البروتوبلازم على الجدار الخلوي المرن.</li>
+                        <li><strong class="text-blue-700">النتيجة:</strong> يكتسب الجدار حالة من التوتر والانتفاخ مما يكسب الخلية (وكذلك النسيج) صلابة.</li>
+                        <li><strong class="text-blue-700">أمثلة:</strong> استقامة سوق وأوراق النباتات العشبية عند الري، وانتفاخ بذور البقوليات الجافة عند وضعها في الماء. تزول بزوال الماء.</li>
+                    </ul>
+                    <p class="mb-3 font-bold text-lg text-green-600">ثانياً: الدعامة التركيبية (الدائمة):</p>
+                    <ul class="list-disc pr-5 space-y-2">
+                        <li><strong class="text-blue-700">الآلية:</strong> ترسيب مواد صلبة على جدر الخلايا أو أجزاء منها. تزيد هذه المواد من قوة وصلابة الجدار وتمنع فقدان الماء.</li>
+                        <li><strong class="text-blue-700">المواد والأمثلة:</strong>
+                            <ol class="list-decimal pr-5 mt-1">
+                                <li><strong class="text-purple-700">السليلوز واللجنين:</strong> في الخلايا الكولنشيمية والإسكلرنشيمية لإكسابها الصلابة.</li>
+                                <li><strong class="text-purple-700">الكيوتين:</strong> مادة شمعية غير منفذة للماء، تترسب على جدر خلايا البشرة الخارجية للحد من فقدان الماء.</li>
+                                <li><strong class="text-purple-700">السيوبرين:</strong> مادة غير منفذة، تترسب في الخلايا الفلينية.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <div class="mt-4 text-center">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. الدعامة في الإنسان (الجهاز الهيكلي) -->
+            <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-blue-500">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-xl font-extrabold text-gray-800 hover:bg-blue-50 transition duration-200 rounded-t-xl" onclick="toggleAccordion(this)">
+                    <span>2. الجهاز الهيكلي في الإنسان (العظام والمفاصل)</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
+                    <p class="mb-3 font-bold text-lg text-blue-600">يتكون الجهاز الهيكلي (206 عظمة) من الهيكل المحوري والطرفي، بالإضافة إلى الغضاريف والمفاصل والأربطة والأوتار.</p>
+                    <ul class="list-disc pr-5 space-y-2">
+                        <li><strong class="text-red-700">الهيكل المحوري (80 عظمة):</strong> يشمل العمود الفقري (33 فقرة)، والجمجمة، والقفص الصدري (12 زوج ضلوع وعظمة القص). وظيفته الرئيسية هي الحماية والدعم.</li>
+                        <li><strong class="text-red-700">الهيكل الطرفي (126 عظمة):</strong> يشمل حزامي الكتف والحوض والأطراف الأربعة. وظيفته الأساسية هي تسهيل الحركة.</li>
+                        <li><strong class="text-red-700">المفاصل:</strong>
+                            <ul class="list-circle pr-5 mt-1 ml-4">
+                                <li><strong class="text-green-700">مفاصل ليفية:</strong> لا تسمح بالحركة (مثل مفاصل الجمجمة).</li>
+                                <li><strong class="text-green-700">مفاصل غضروفية:</strong> تسمح بحركة محدودة جداً (مثل المفاصل بين الفقرات).</li>
+                                <li><strong class="text-green-700">مفاصل زلالية (الغالبية):</strong> مرنة وتسمح بحركة واسعة أو محدودة. تحتوي على سائل زلالي وغضاريف لتقليل الاحتكاك (مثل مفصل الركبة والكتف).</li>
+                            </ul>
+                        </li>
+                        <li><strong class="text-red-700">الأربطة:</strong> حزم ليفية قوية تربط العظام ببعضها عند المفاصل وتحدد حركة المفصل.</li>
+                        <li><strong class="text-red-700">الأوتار:</strong> نسيج ضام يربط العضلات بالعظام (مثل وتر أخيل الذي يربط العضلة التوأمية بعظمة الكعب).</li>
+                    </ul>
+                    <div class="mt-4 text-center">
+                        [Image of الهيكل العظمي البشري]
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. الحركة في النبات -->
+            <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-yellow-500">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-xl font-extrabold text-gray-800 hover:bg-yellow-50 transition duration-200 rounded-t-xl" onclick="toggleAccordion(this)">
+                    <span>3. أنواع وآليات الحركة في النبات</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
+                    <p class="mb-3 font-bold text-lg text-yellow-600">تظهر الحركة في النبات بعدة أشكال، بعضها يعتمد على النمو وبعضها على الدعامة الفسيولوجية:</p>
+                    <ul class="list-disc pr-5 space-y-2">
+                        <li><strong class="text-purple-700">الحركة الدائمة (الدورانية السيتوبلازمية):</strong> حركة مستمرة للسيتوبلازم (حركة دورانية) داخل خلايا النبات الحية، وتشاهد تحت المجهر في خلايا ورقة نبات الإيلوديا.</li>
+                        <li><strong class="text-purple-700">حركة اللمس والنوم واليقظة:</strong>
+                            <p class="mr-4 mt-1">تحدث في نبات المستحية وغيرها من البقوليات نتيجة تغير ضغط الامتلاء (الدعامة الفسيولوجية) في خلايا الانتفاخات الموجودة عند قواعد الوريقات والأعناق.</p>
+                        </li>
+                        <li><strong class="text-purple-700">حركة الشد:</strong>
+                            <p class="mr-4 mt-1">تكون إما عن طريق <strong class="text-red-600">المحاليق</strong> التي تلتف حول الدعامات ثم تتقلص لسحب الساق لأعلى، أو عن طريق <strong class="text-red-600">جذور الشد</strong> في الأبصال والكورمات لشد الساق تحت سطح التربة. </p>
+                        </li>
+                        <li><strong class="text-purple-700">الانتحاء:</strong> حركة نمو لأجزاء النبات استجابة لمنبه خارجي (ضوئي، أرضي، مائي).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. الحركة في الإنسان (العضلات) -->
+            <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-red-500">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-xl font-extrabold text-gray-800 hover:bg-red-50 transition duration-200 rounded-t-xl" onclick="toggleAccordion(this)">
+                    <span>4. آلية الانقباض والانبساط العضلي (نظرية الخيوط المنزلقة)</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
+                    <p class="mb-3 font-bold text-lg text-red-600">تعتمد الحركة على انقباض وانبساط الألياف العضلية، وتتم وفقاً لنظرية هيو هيكسلي:</p>
+                    <ul class="list-decimal pr-5 space-y-3">
+                        <li><strong class="text-indigo-700">وصول السيال العصبي:</strong> السيال يصل إلى الوصلة العصبية العضلية ويحفز إطلاق الأستيل كولين.</li>
+                        <li><strong class="text-indigo-700">دور الكالسيوم:</strong> تتدفق أيونات الكالسيوم (Ca++) لتقوم بوظيفتين: تحرير الأستيل كولين، وتحفيز تكوين الروابط المستعرضة.</li>
+                        <li><strong class="text-indigo-700">تكوين الروابط المستعرضة:</strong> تنطلق الروابط المستعرضة (التي تكونت بمساعدة الكالسيوم) من خيوط الميوسين السميكة وتتصل بخيوط الأكتين الرفيعة.</li>
+                        <li><strong class="text-indigo-700">عملية الانقباض:</strong> تعمل الروابط المستعرضة كخطاطيف تسحب خيوط الأكتين باتجاه بعضها البعض (نحو مركز القطعة العضلية)، مما يؤدي إلى:
+                            <ul class="list-square pr-5 mt-1 ml-4">
+                                <li>قصر طول القطعة العضلية.</li>
+                                <li>اختفاء أو قصر المنطقة شبه المضيئة (H).</li>
+                                <li>قصر المنطقة المضيئة (I)، بينما يظل طول المنطقة الداكنة (A) ثابتاً.</li>
+                            </ul>
+                        </li>
+                        <li><strong class="text-indigo-700">عملية الانبساط:</strong> يتطلب الانفصال عن الأكتين طاقة (ATP). ترتبط جزيئات ATP بالروابط المستعرضة مما يفك ارتباطها بالأكتين، فترتخي العضلة وتعود الخيوط إلى موضعها الأصلي.</li>
+                    </ul>
+                    <div class="mt-4 text-center">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. الإجهاد العضلي والوصلة العصبية العضلية -->
+            <div class="accordion-item bg-white rounded-xl shadow-lg border-t-4 border-pink-500">
+                <button class="accordion-header w-full flex justify-between items-center p-5 text-xl font-extrabold text-gray-800 hover:bg-pink-50 transition duration-200 rounded-t-xl" onclick="toggleAccordion(this)">
+                    <span>5. الإجهاد العضلي والشد العضلي والوصلة العصبية</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content bg-gray-50 rounded-b-xl text-gray-700">
+                    <ul class="list-disc pr-5 space-y-3">
+                        <li><strong class="text-orange-700">الوصلة العصبية العضلية:</strong> هي منطقة التشابك بين التفرع النهائي للخلية العصبية والليف العضلي. بعد انتهاء الانقباض، يعمل إنزيم الكولين إستريز على تحطيم الأستيل كولين لعودة غشاء الليف العضلي إلى حالة الراحة. </li>
+                        <li><strong class="text-orange-700">الإجهاد والتعب العضلي:</strong>
+                            <p class="mr-4 mt-1">ينتج عن نقص إمداد الأكسجين للعضلات أثناء المجهود الشاق، مما يضطرها للتنفس اللاهوائي. ينتج عن ذلك تراكم <strong class="text-red-600">حمض اللاكتيك</strong> (يسبب الإجهاد) وتوليد كمية قليلة من <strong class="text-red-600">ATP</strong>.</p>
+                        </li>
+                        <li><strong class="text-orange-700">الشد العضلي المؤلم:</strong> حالة أشد من الإجهاد، يحدث نتيجة:
+                            <ol class="list-decimal pr-5 mt-1 ml-4">
+                                <li>عدم وصول أو نقص جزيئات <strong class="text-red-600">ATP</strong> اللازمة لفصل الروابط المستعرضة عن خيوط الأكتين، فتظل العضلة في حالة انقباض دائم.</li>
+                                <li>وصول سيالات عصبية خاطئة من المخ.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- نهاية حاوية المراجعة -->
+
+        <!-- تذييل -->
+        <footer class="mt-12 text-center text-gray-600 text-sm p-4 border-t border-gray-300">
+            <p>مراجعة مركزة وشاملة لأهم النقاط في الفصل الأول.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // دالة JavaScript لفتح وإغلاق أقسام المراجعة (Accordion)
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+
+            // إغلاق كل الأقسام ما عدا القسم الحالي
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-content').style.maxHeight = 0;
+                    otherItem.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+
+            // تبديل حالة القسم الحالي
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+                content.style.maxHeight = 0;
+                icon.classList.remove('rotate-180');
+            } else {
+                item.classList.add('active');
+                // نستخدم scrollHeight لتعيين ارتفاع المحتوى بدقة
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // تحديث maxHeight عند تغيير حجم الشاشة (لضمان الاستجابة الكاملة)
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.accordion-item.active .accordion-content').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + "px";
+            });
+        });
+
+        // تشغيل أول قسم عند التحميل
+        window.onload = () => {
+             const firstButton = document.querySelector('.accordion-header');
+             if (firstButton) {
+                 toggleAccordion(firstButton);
+             }
+        };
+    </script>
+</body>
+</html>
