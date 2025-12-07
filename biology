@@ -29,16 +29,20 @@
         .option-btn {
             @apply flex-grow p-3 mb-2 text-right bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-blue-50 transition duration-150 ease-in-out;
         }
-        /* التحديد عند الضغط (الميزة المطلوبة) */
+        /* التحديد عند الضغط على الخيار (تم تعزيز التحديد ليكون واضحاً جداً) */
         .option-btn.selected {
-             /* إطار وحلقة أكثر وضوحاً عند التحديد */
-             @apply border-purple-600 ring-4 ring-purple-400 shadow-lg;
+             /* جعل الخلفية أغمق لتكون واضحة جداً */
+             @apply border-purple-700 ring-4 ring-purple-500 shadow-xl bg-purple-200; 
         }
         .option-btn.correct {
             @apply bg-green-100 border-green-500 font-bold;
         }
         .option-btn.incorrect {
             @apply bg-red-100 border-red-500 font-bold;
+        }
+        /* تنسيق الإطار الأسود حول السؤال */
+        #question-display.active-quiz-frame {
+            @apply border-4 border-gray-900 shadow-2xl;
         }
         /* مسافة إضافية بين أقسام المراجعة والكويز */
         #review-container {
@@ -185,7 +189,8 @@
             
             <!-- مكان عرض الأسئلة -->
             <div id="quiz-container">
-                <div id="question-display" class="bg-purple-50 p-4 rounded-lg shadow-inner mb-6">
+                <!-- تم إضافة active-quiz-frame class هنا عند بدء الكويز -->
+                <div id="question-display" class="bg-purple-50 p-4 rounded-lg shadow-inner mb-6 transition duration-300">
                     <p class="text-lg font-bold text-gray-800" id="current-question-text">اضغط "ابدأ الاختبار" للبدء!</p>
                 </div>
                 
@@ -287,6 +292,7 @@
         const reviewTitle = document.getElementById('review-title');
         const quizContainer = document.getElementById('quiz-container');
         const resultContainer = document.getElementById('result-container');
+        const questionDisplay = document.getElementById('question-display');
         const questionText = document.getElementById('current-question-text');
         const optionsContainer = document.getElementById('options-container');
         const nextButton = document.getElementById('next-button');
@@ -332,6 +338,9 @@
 
         // دالة اختيار الإجابة
         function selectOption(button, index) {
+            // **رسالة لتأكيد التشغيل** - ستظهر في Console Log المتصفح
+            console.log(`تم اختيار الخيار: المؤشر ${index + 1}, النص: ${button.textContent}`); 
+
             // إزالة التحديد من جميع الخيارات
             document.querySelectorAll('.option-btn').forEach(btn => {
                 btn.classList.remove('selected');
@@ -384,6 +393,9 @@
 
         // دالة عرض النتائج
         function showResults() {
+            // إزالة الإطار الأسود حول السؤال
+            questionDisplay.classList.remove('active-quiz-frame');
+            
             quizContainer.classList.add('hidden');
             resultContainer.classList.remove('hidden');
             
@@ -413,6 +425,8 @@
             // إخفاء قسم المراجعة والشرح عند البدء
             reviewContainer.classList.add('hidden');
             reviewTitle.classList.add('hidden');
+            // إضافة الإطار الأسود حول السؤال
+            questionDisplay.classList.add('active-quiz-frame');
 
             currentQuestionIndex = 0;
             score = 0;
